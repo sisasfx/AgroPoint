@@ -5,12 +5,12 @@ const HEADERS = {
 };
 
 export const registerFarmer = async (newUser) => {
-  const raw = JSON.stringify(newUser);
+  console.log("From service --> ", newUser)
   try {
     const resp = await fetch(`${URL}/api/user/signup/farmer/`, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: raw,
+      //headers: { "Content-Type": "application/json" },
+      body: newUser,
       redirect: "follow",
     });
     const data = await resp.json();
@@ -114,8 +114,6 @@ export const getInfoUser = async (token) => {
 };
 
 export const getInfoFarmer = async (id_user, token) => {
-  
-
   try {
     const res = await fetch(`${URL}/api/farmer/${id_user}`, {
       method: "GET",
@@ -149,12 +147,11 @@ export const getInfoTech = async (id_user, token) => {
 };
 
 export const registerTech = async (newUser) => {
-  const raw = JSON.stringify(newUser);
   try {
     const resp = await fetch(`${URL}/api/user/signup/tech/`, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: raw,
+      //headers: { "Content-Type": "application/json" },
+      body: newUser,
       redirect: "follow",
     });
     const data = await resp.json();
