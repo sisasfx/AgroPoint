@@ -70,7 +70,10 @@ export const RegFarmer = () => {
     form.append("pac_num", state.pac_num);
     form.append("avatar", file)
     await registerFarmer(form);
-    navigate("/farmer");
+    setTimeout(() => {
+      navigate("/farmer");
+    },1000)
+    
   };
 
   useEffect(() => {
