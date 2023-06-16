@@ -47,6 +47,7 @@ export const RegFarmer = () => {
           }
         };
         reader.readAsDataURL(target.files[0])
+        console.log("Imagen cargada", reader.result)
       }
   }
 
